@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../css/reset.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Acme|Open+Sans" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic,800,800italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<script src="../js/hanoigame.js"></script>
+		<title>Jeu des Tours de Hanoi</title>
+	</head>
+
+	<body>
+		<header>
+			<h1>Jeu des Tours de Hanoï</h1>
+			<p>Vous avez joué <span id="nbMoves"></span> coups.
+			</p>
+		</header>
+
+		<main id="gameBoard">
+			<ul class="tower" id="towerA"></ul>
+			<ul class="tower" id="towerB"></ul>
+			<ul class="tower" id="towerC"></ul>
+			<section id="restartGamePanel" class="hidden">
+				<h2>Attention!</h2>
+				<p>Vous allez perdre la partie en cours, êtes vous sûr de vouloir recommencer?</p>
+				<div>
+					<button id="newGame">Oui</button>
+					<button id="continueGame">Non</button>
+				</div>
+			</section>
+			<section id="congratulationPanel" class="hidden">
+				<h2>Bravo!</h2>
+				<p>Vous avez gagné en <span id="nbMovesFinal"></span></p>
+				<p id="perfectornot">Vous auriez pu gagner en
+					<span id="nbUnnecessaryMoves"></span>
+					coups de moins!
+					<button id ="playAgain">Rejouer</button>
+				</p>
+
+			</section>
+		</main>
+
+		<footer id="restartGame">
+			<button id="confirmNewGame">Nouvelle Partie</button>
+		</footer>
+
+	</body>
+
+</html>
