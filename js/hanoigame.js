@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 //Variables
   var diskHold = null;
-  var nbDisk = 4;
+  var nbDisk = 7;
   var minMoves = Math.pow(2,nbDisk)-1;
   var gameBoard = document.querySelector('#gameBoard');
   var restart = document.querySelector('#restartGamePanel');
