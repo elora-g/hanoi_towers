@@ -22,18 +22,15 @@ window.addEventListener('DOMContentLoaded', function() {
   function initGame(tower){
     // clear potential existing disks
     var existingDisks = document.querySelectorAll('.disk'); // returns a NodeList or null
-    console.log(existingDisks);
     if(existingDisks){
       // .map can't be called directly on a NodeList so we call the map method of arrays on the NodeList
       Array.prototype.map.call(existingDisks, function(element){
-        console.log(element);
-        console.log(element.parentElement);
         element.parentElement.removeChild(element);
       });
     }
-    tower.innerhtml = '';
+    tower.innerHTML = '';
     moves = 0;
-    nbMoves.innerhtml = '0';
+    nbMoves.innerHTML = '0';
     for (var i=nbDisk; i>= 1; i--){
       var li = document.createElement("li");
       li.classList.add("disk", "disk"+i);
@@ -63,7 +60,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function gameMove(tower){
     var disks = tower.children;
-    console.log(disks);
     var topDisk;
     var topDiskValue;
     var towerIsEmpty = false;
@@ -74,11 +70,9 @@ window.addEventListener('DOMContentLoaded', function() {
       topDisk = tower.lastChild;
       // get the data-value attribute of this disk
       topDiskValue = topDisk.getAttribute('data-value');
-      console.log(topDiskValue);
     }
     if (diskHold){
       var diskHoldValue = diskHold.getAttribute('data-value');
-      console.log("j'ai un disque en main je veux le poser sa valeur est" + diskHoldValue);
       if (topDiskValue === diskHoldValue){
         diskHold.classList.remove('selected');
         diskHold = null;
@@ -103,7 +97,6 @@ window.addEventListener('DOMContentLoaded', function() {
   // handle clicks on disks / towers
   function onClickTower(event){
     var myClassList = event.target.classList;
-    console.log(myClassList);
     if(myClassList.contains('disk')){
       var tower = event.target.parentElement;
       gameMove(tower);
